@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Andy | Portfolio</title>
+  <link rel="stylesheet" href="css/ed-animate.css">
+  <link rel="stylesheet" href="css/fuentes.css">
+	<link href="css/font/fontawesome-all.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/weather-icons.css">
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="page-loader"><span class="preloader-interior"></span></div>
+  <header id="header" class="main-header">
+		<div class="sub-header">
+			<div class="logo">
+				<h2 class="no-margin">{{ a<span>ndy</span> }}</h2>
+			</div>
+		
+			<div class="main-menu">
+				<ul class="menu-ul">
+					<li><a href="#">Proyectos<span class="colorbar"></span></a></li>
+					<li><a href="blog.html">Blog<span class="colorbar"></span></a></li>
+					<li><a href="#">Contacto<span class="colorbar"></span></a></li>
+				</ul>
+			</div>
+		</div>
+  </header>
+  <main>
+		<div class="fondo"></div>
+		<div class="fondo-on">
+			<div class="text-portada">
+				<h1 class="title-pp no-margin">Soy Andy Moreno</h1>
+				<p class="job-pp no-margin">Progamador y Diseñador Web</p>
+			</div>
+			<div class="contenedor_portada">
+				<figure class="imagen-pp">
+					<img src="img/banner.jpg" alt="">
+				</figure>
+				<figcaption class="info-extra">
+					<h3 class="in-ex-ti">CinePlay</h3>
+					<p class="in-ex-p"><i class="fab fa-wordpress"></i><i class="fab fa-wordpress"></i></p>
+				</figcaption>
+			</div>
+			<p class="job-pp2 no-margin">Proyecto nuevo!</p>
+		</div>
+		<div id="hablar" class="plus-datos">
+			<div class="box-flotador">
+				<img src="img/Yo.jpg" alt="">
+				<div v-bind:class="info" v-on:click="showBarInfo">
+					<span class="triangulo_izq"></span>
+					<div class="texto-box-flotador">
+						<p id="habilidad">¿Quieres conocerme?<span>Clickme</span></p>
+					</div>
+				</div>
+				
+				<div v-bind:class="skill" v-on:click="showBarSkill">
+					<span class="triangulo_izq"></span>
+					<div class="texto-box-flotador">
+						<p id="info">Mis habilidades<span>Clickme</span></p>
+					</div>
+				</div>
+				
+				<div v-bind:class="contact" v-on:click="showBarContact">
+					<span class="triangulo_izq"></span>
+					<div class="texto-box-flotador">
+						<p id="contact">Enviame un mensaje<span>Clickme</span></p>
+					</div>
+				</div>
+			</div>
+			<!--Cuadro habilidades -->
+			<template v-if="showInfo">
+				<div id="barra_abierta" class="cuadro-habilidades" v-bind:class="classinfo">
+					<p class="cerrar-barra"><i v-on:click="closeInfo" class="fas fa-angle-right"></i></p>
+					<div class="imagen-info">
+						<span class="img_divisor"></span>
+						<img src="img/Yo.jpg" alt="">
+						<span class="img_divisor"></span>
+						<div class="bandera">
+							<span class="punto_1"></span>
+							<span class="punto_2"></span>
+							<span class="punto_3"></span>
+							<span class="punto_4"></span>
+							<span class="punto_5"></span>
+							<span class="punto_6"></span>
+							<span class="punto_7"></span>
+							<div class="amarillo bloque"></div>
+							<div class="azul bloque"></div>
+							<div class="rojo bloque"></div>
+						</div>
+					</div>
+					<h3 class="title-barra no-margin">Mi información</h3>
+					<div class="p-informacion">
+						<p>Hola mi nombre es Andy Moreno. Soy ingeniero de sistema y me especializo en el desarrollo web. Me considero full-stack  no solo por mis conocimientos de back-end y front-end, si no más por mis gustos personales, me encanta crear diseños impactantes para los usuarios como también crear por medios de algoritmos soluciones para satisfacer las necesidades de mis usuarios.</p>
+						<p>Soy una persona proactiva que le gusta los retos y autodidacta si no tengo conocimiento de algo lo investigo hasta aprenderlo.</p>
+						<p>Saliendo del mundo del diseño web, tengo aficiones por la literatura, los video-juegos y el cine.</p>					
+					</div>
+					<div class="social_info">
+						<span class="facebook_info"><a href="#" title="Sígueme en Facebook"><i class="fab fa-facebook-f"></i></a></span>
+						<span class="twitter_info"><a href="#" title="Sígueme en Twitter"><i class="fab fa-twitter"></i></a></span>
+						<span class="github_info"><a href="#" title="Sígueme en Github"><i class="fab fa-github-alt"></i></a></span>
+						<span class="link_info"><a href="#" title="Sígueme en Linkedin"><i class="fab fa-linkedin-in"></i></a></span>
+					</div>
+					
+				</div>
+			</template>
+			<!--Cuadro info -->
+			<template v-if="showSkill">
+				<div id="barra_info" class="cuadro-habilidades" v-bind:class="classSkill">
+					<p class="cerrar-barra"><i v-on:click="closeSkill" class="fas fa-angle-right"></i></p>
+					<h3 class="title-barra2 no-margin">Mis habilidades</h3>
+					<div class="box_dat" v-for="item in itemskill">
+						<div class="box-tools">
+							<p>
+								<span class="icon_skill">
+									<i class="fab" :class="item.icon"></i>
+								</span>
+								{{ item.nameSkill }}
+							</p>
+						</div>
+						<div class="barra no-padding"><span v-bind:style="item.barra" class="barra_relleno"></span></div>				
+					</div>
+					<div class="ed-item p-informacion">
+						<p class="p_skill">La lista presentada en la parte superior representa mis conocimientos en el desarrollo web. Hay tecnologias como Html, Css, Javascript y Php que son indispensable para todo desarrollador web, por ese motivo no se encuentra en la lista</p>
+						<p class="skill_frase">“Cuéntame y olvido. Enséñame y recuerdo. Involúcrame y aprendo.” <span>Benjamin Franklin.</span></p>
+					</div>
+				</div>
+		</template>
+			<!--Cuadro contact -->
+			<template v-if="showContact">
+				<div id="barra_contact" class="cuadro-habilidades" v-bind:class="classContact">
+					<p class="cerrar-barra"><i v-on:click="closeContact" class="fas fa-angle-right"></i></p>
+					<div class="form-index">
+						<form id="ContactForm" class="ContactForm" @submit.prevent="sendForm">
+							<legend>¿Que deseas enviar?</legend>
+							<div align="center">
+								<input v-model="formType" :value="true" name="formType" type="radio" id="opinion">
+								<label for="opinion">Opinión</label>
+								<input v-model="formType" :value="false" name="formType" type="radio" id="budget">
+								<label for="budget">Presupuesto</label>
+							</div>
+							<legend>Formulario de <span>{{ formTitle }}</span></legend>
+							<input
+								@keyup="validateData"
+								type="text"
+								name="name"
+								title="Tu nombre"
+								placeholder="Escribe tu nombre"
+								pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+								required>
+							<transition name="fade">
+								<span v-show="message.name" v-text="message.name" class="ContactForm-message u-error"></span>
+							</transition>
+							<input @keyup="validateData" type="email" name="email" title="Tu email" placeholder="Escribe tu email"
+								required>
+							<transition name="fade">
+								<span v-show="message.email" v-text="message.email" class="ContactForm-message  u-error"></span>
+							</transition>
+							<template v-if="!formType">
+									<input @keyup="validateData" type="tel" name="phone" title="Tu teléfono" placeholder="Escribe tu teléfono" pattern="^[0-9]+$" required>
+								<transition name="fade">
+									<span v-show="message.phone" v-text="message.phone" class="ContactForm-message  u-error"></span>
+								</transition>
+								<select name="services" required>
+									<option
+										v-for="service in services"
+										:value="service.id"
+										v-text="service.name"
+									></option>
+								</select>
+							</template>
+							<template v-else>
+								<input @keyup="validateData" type="text" name="subject" title="Asunto a tratar" placeholder="Asunto a tratar" required>
+								<transition name="fade">
+								<span v-show="message.subject" v-text="message.subject" class="ContactForm-message u-error"></span>
+								</transition>
+							</template>
+							<textarea @keyup="validateData" name="comments" title="Tus comentarios" placeholder="Escribe tus comentarios" cols="50" rows="5" required></textarea>
+							<transition name="fade">
+								<span v-show="message.comments" v-text="message.comments" class="ContactForm-message u-error"></span>
+							</transition>
+							<input type="submit" value="Enviar">
+							<transition name="fade">
+								<span v-show="message.serverResponse" v-html="message.serverResponse"></span>
+							</transition>
+						</form>
+					</div>
+				</div>
+			</template>
+		</div>
+		<div id="clima" class="dato-clima" v-bind:class="message">
+			<h3 id=cli_lugar v-text="city"></h3>
+			<div class="img-clima"><i id="icono_clima" class="wi" v-bind:class="classicon"></i></div>
+			<div class="dat-clima"><p v-text="temp"></p><span v-html="wind"></span></div>
+		</div>
+	</main>
+	<footer class="main-footer">
+		<div class="footer-info"><p>Ingeniero de Sistemas, Andy Moreno.</p></div>
+		<div class="footer-social">
+			<span><a href="#" title="Sígueme en Facebook"><i class="fab fa-facebook-f"></i></a></span>
+			<span><a href="#" title="Sígueme en Twitter"><i class="fab fa-twitter"></i></a></span>
+			<span><a href="#" title="Sígueme en Github"><i class="fab fa-github-alt"></i></a></span>
+			<span><a href="#" title="Sígueme en Linkedin"><i class="fab fa-linkedin-in"></i></a></span>
+		</div>
+		<div class="footer-date"><p>11 Febrero 2018. Venezuela</p></div>
+	</footer>
+	
+	<script src="js/vue.js"></script>
+	<script src="js/axios.min.js"></script>
+	<script src="js/portada-vue.js"></script>
+	<script>
+		const pageLoader = document.getElementById('page-loader');
+		function miFuncion() {	
+			pageLoader.classList.add('fade-out');
+			setTimeout(function () {
+				pageLoader.classList.add('oculto');
+        	}, 500);
+		}
+		window.onload = miFuncion;
+	</script>
+</body>
+</html>
