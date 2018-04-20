@@ -10,7 +10,8 @@ $exito:  #4CAF50;
 $blanco: #fff;
 $negro: #171A1C;
 $ancho-inputs: 80%;
-$gris: #adadad;;
+$gris: #adadad;
+$gris2: #797979;
 
 $z-base :  1;
 $z-medio:  10;
@@ -956,6 +957,7 @@ pre{
 	border-bottom: 1px solid #ddd;
 	padding: 0.5em 0 0.5em 0;
 	margin-bottom: 5px;
+	position: relative;
 }
 .artcile-rating-title{
 	margin: 0;
@@ -965,5 +967,37 @@ pre{
 		&:hover{
 			opacity: 0.9;
 		}
+	}
+}
+.article-rating-p{
+	margin: 5px 0 5px 0;
+	font-size: 0.8em;
+	color: $gris2;
+	i{
+		margin-right: 5px;
+	}
+}
+.images-rating{
+	position: relative;
+}
+.share{
+	position: absolute;
+	right: 0;
+	color: $gris2;
+	transition: all 0.3s ease-out; 
+	&:hover{
+		color: $azul;
+		cursor: pointer;
+	}
+}
+.rating-star{
+	position: absolute;
+	bottom: -5px;
+	color: #ffbe08;
+}
+.buttom-sidebar{
+	padding: 0;
+	button{
+		width: 100%;
 	}
 }

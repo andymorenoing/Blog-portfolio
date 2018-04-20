@@ -4132,6 +4132,7 @@ pre {
   border-bottom: 1px solid #ddd;
   padding: 0.5em 0 0.5em 0;
   margin-bottom: 5px;
+  position: relative;
 }
 
 .artcile-rating-title {
@@ -4145,5 +4146,45 @@ pre {
 
 .artcile-rating-title a:hover {
   opacity: 0.9;
+}
+
+.article-rating-p {
+  margin: 5px 0 5px 0;
+  font-size: 0.8em;
+  color: #797979;
+}
+
+.article-rating-p i {
+  margin-right: 5px;
+}
+
+.images-rating {
+  position: relative;
+}
+
+.share {
+  position: absolute;
+  right: 0;
+  color: #797979;
+  transition: all 0.3s ease-out;
+}
+
+.share:hover {
+  color: #008AE6;
+  cursor: pointer;
+}
+
+.rating-star {
+  position: absolute;
+  bottom: -5px;
+  color: #ffbe08;
+}
+
+.buttom-sidebar {
+  padding: 0;
+}
+
+.buttom-sidebar button {
+  width: 100%;
 }
 /*# sourceMappingURL=styles.css.map */
