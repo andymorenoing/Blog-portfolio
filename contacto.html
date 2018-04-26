@@ -30,60 +30,8 @@
     <div class="map-contacto"><div id="map"></div></div>
     <div class="cont-main-contact">
       <div class="title-contact"><h2>Datos de contacto</h2></div>
-      <div id="hablar" class="form-contact">
-        <form id="ContactForm" class="ContactForm" @submit.prevent="sendForm">
-					<legend>¿Que deseas enviar?</legend>
-					<div align="center">
-						<input v-model="formType" :value="true" name="formType" type="radio" id="opinion">
-						<label for="opinion">Opinión</label>
-						<input v-model="formType" :value="false" name="formType" type="radio" id="budget">
-						<label for="budget">Presupuesto</label>
-					</div>
-					<legend>Formulario de <span>{{ formTitle }}</span></legend>
-					<input
-						@keyup="validateData"
-						type="text"
-						name="name"
-						title="Tu nombre"
-						placeholder="Escribe tu nombre"
-						pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
-						required>
-					<transition name="fade">
-						<span v-show="message.name" v-text="message.name" class="ContactForm-message u-error"></span>
-					</transition>
-					<input @keyup="validateData" type="email" name="email" title="Tu email" placeholder="Escribe tu email"
-						required>
-					<transition name="fade">
-						<span v-show="message.email" v-text="message.email" class="ContactForm-message  u-error"></span>
-					</transition>
-					<template v-if="!formType">
-							<input @keyup="validateData" type="tel" name="phone" title="Tu teléfono" placeholder="Escribe tu teléfono" pattern="^[0-9]+$" required>
-						<transition name="fade">
-							<span v-show="message.phone" v-text="message.phone" class="ContactForm-message  u-error"></span>
-						</transition>
-						<select name="services" required>
-							<option
-								v-for="service in services"
-								:value="service.id"
-								v-text="service.name"
-							></option>
-						</select>
-					</template>
-					<template v-else>
-						<input @keyup="validateData" type="text" name="subject" title="Asunto a tratar" placeholder="Asunto a tratar" required>
-						<transition name="fade">
-						<span v-show="message.subject" v-text="message.subject" class="ContactForm-message u-error"></span>
-						</transition>
-					</template>
-					<textarea @keyup="validateData" name="comments" title="Tus comentarios" placeholder="Escribe tus comentarios" cols="50" rows="5" required></textarea>
-					<transition name="fade">
-						<span v-show="message.comments" v-text="message.comments" class="ContactForm-message u-error"></span>
-					</transition>
-					<input type="submit" value="Enviar">
-					<transition name="fade">
-						<span v-show="message.serverResponse" v-html="message.serverResponse"></span>
-					</transition>
-				</form>
+      <div id="main" class="form-contact">
+				<formvue></formvue>
       </div>
       <div class="contact-info">
           <p class="contact-info-p"><i class="fas fa-map-marker-alt"></i>Venezuela, <span>Edo. Táchira. San Cristóbal</span></p>
@@ -105,8 +53,15 @@
 	</footer>
 	
 	<script src="js/vue.js"></script>
-  <script src="js/axios.min.js"></script>
-  <script src="js/portada-vue.js"></script>
+	<script src="js/comp-form.js"></script>
+	<script>
+	const mv = new Vue({
+		el: '#main'
+
+	});
+	</script>
+
+
   <script>
 
   function initMap() {

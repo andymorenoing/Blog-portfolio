@@ -719,10 +719,12 @@ textarea{
 .grid-article{
 	@include edItem(100);
 	@include edContainer;
+	padding: 0 0.5em 0 0.5em;
 }
 .div-article{
 	@include edItem(1/3);
 	margin-bottom: 1.5em;
+	padding: 0 0.5em 0 0.5em;
 }
 .article-blog{
 	@include edItem(100);
@@ -746,7 +748,10 @@ textarea{
 	border-radius: 50%;
 }
 .arti-head-info{
-	@include edItem(45);
+	@include edItem(60);
+}
+.arti-head-img{
+	padding-bottom: 0.5em;
 }
 .name-author{
 	color: $negro;
@@ -768,16 +773,15 @@ textarea{
 	background: #ccc;
 }
 .article-cate{
-	@include edItem(30);
+	margin-bottom: 1em;
+	@include edItem(50);
 	text-align: center;
 	background: $azul;
 	padding: .5em;
 	border-radius: 3px;
 	transition: all .25s linear;
 }
-.article-cate:active{
-	transform: scale(0.8);
-}
+
 .article-cate a{
 	text-decoration: none;
 	color: #fff;
@@ -905,6 +909,9 @@ textarea{
 	position: relative;
 	margin-bottom: 3em;
 }
+.header-single {
+	position: relative;
+}
 .header-single > img{
 	border-radius: 0.3rem 0.3rem 0 0;
 	filter: brightness(0.35);
@@ -942,7 +949,7 @@ pre{
 }
 .sidebar-single{
 	position: fixed;
-	width: 25%;
+	width: 21%;
 	background: #fff;
 	padding: 0;
 	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
@@ -954,7 +961,6 @@ pre{
 }
 .article-rating{
 	border-top: 1px solid #ddd;
-	border-bottom: 1px solid #ddd;
 	padding: 0.5em 0 0.5em 0;
 	margin-bottom: 5px;
 	position: relative;
@@ -982,7 +988,7 @@ pre{
 }
 .share{
 	position: absolute;
-	right: 0;
+	right: 5px;
 	color: $gris2;
 	transition: all 0.3s ease-out; 
 	&:hover{
@@ -999,5 +1005,33 @@ pre{
 	padding: 0;
 	button{
 		width: 100%;
+	}
+}
+.filtraje{
+	padding: 0 0 1em 1em;
+}
+.sidebar__article-ele{
+	@include edItem(100);
+	padding: 0;
+}
+.single__contenido-principal{
+	padding-top: 2em;
+}
+.single__banner-icon{
+	position: absolute;
+    bottom: 10px;
+    color: #ddd;
+    font-size: 0.8em;
+}
+.single__banner-date{
+	left: 20px;
+	i{
+		margin-right: 5px; 
+	}
+}
+.single__banner-share{
+	right: 20px;
+	i{
+		margin-right: 5px; 
 	}
 }
