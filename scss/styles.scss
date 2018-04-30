@@ -774,17 +774,20 @@ textarea{
 }
 .article-cate{
 	margin-bottom: 1em;
-	@include edItem(50);
+	@include edItem(45);
 	text-align: center;
-	background: $azul;
-	padding: .5em;
+	border: 1px solid $azul;
+	padding: .3em;
 	border-radius: 3px;
 	transition: all .25s linear;
+	i{
+		margin-right: 5px;
+	}
 }
 
 .article-cate a{
 	text-decoration: none;
-	color: #fff;
+	color: $negro;
 }
 .title-article{
 	margin: .5em 0 .25em 0;
@@ -1007,9 +1010,6 @@ pre{
 		width: 100%;
 	}
 }
-.filtraje{
-	padding: 0 0 1em 1em;
-}
 .sidebar__article-ele{
 	@include edItem(100);
 	padding: 0;
@@ -1033,5 +1033,63 @@ pre{
 	right: 20px;
 	i{
 		margin-right: 5px; 
+	}
+}
+.sidebar__cat-ul{
+	list-style: none;
+	li{
+		margin: 0.5em 0 0 0; 
+	}
+	i{
+		margin-right: 5px;
+	}
+	a{
+		text-decoration: none;
+		color: $negro;
+		transition: all 0.5s ease;
+	}
+	a:hover{
+		color: $azul;
+	}
+}
+.content__proyects article{
+	margin: 1em 0 1em 0;
+	border: 1px solid #eee;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.content__proyects-img img{
+	border-radius: 50%; 
+}
+.content__proyects-testi{
+	margin: 0;
+	color: $gris2;
+	font-style: italic;
+}
+
+.content__proyects-title{
+	margin: 0.5em 0 0 0;
+	color: $azul;
+	font-size: 1.2em;
+}
+.content__proyects-parrafo{
+	margin: 0.5em 0 0 0;
+	color: $negro;
+	font-size: 0.9em;
+}
+.content__proyects-metadatos{
+	font-size: 0.8em;
+	i{
+		margin-right: 5px;
+	}
+	a{
+		color: $negro;
+		transition: all 0.3s;
+	}
+	a:hover{
+		color: $azul;
+		text-decoration: none;
+	}
+	.content__proyects-date{
+		color: $gris2;
 	}
 }

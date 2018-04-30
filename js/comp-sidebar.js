@@ -130,10 +130,21 @@ Vue.component('poststop', {
         }
     }
 });
-Vue.component('postsfiltro', {
+Vue.component('sidebarcat', {
     template: `
         <div>
-            
+            <h3>Categorias de tecnologias</h3>
+            <div class="sidebar__cat">
+                <ul class="sidebar__cat-ul">
+                    <li><a href=""><i class="fab fa-gratipay"></i>Diseño Web</a></li>
+                    <li><a href=""><i class="fab fa-laravel"></i>Laravel</a></li>
+                    <li><a href=""><i class="fab fa-drupal"></i>Drupal</a></li>
+                    <li><a href=""><i class="fab fa-wordpress"></i>Wordpress</a></li>
+                    <li><a href=""><i class="fab fa-node-js"></i>Node</a></li>
+                    <li><a href=""><i class="fab fa-vuejs"></i>Vuejs</a></li>
+                    <li><a href=""><i class="fab fa-linux"></i>Linux</a></li>
+                </ul>
+            </div>
         </div>
     `,
     data () {
